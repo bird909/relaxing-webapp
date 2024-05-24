@@ -115,3 +115,26 @@ header {
         grid-template-columns: 1fr;
     }
 }
+.overlay {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.overlay.show {
+    opacity: 1;
+}
+const showOverlay = () => {
+    overlay.classList.add('show');
+};
+
+const hideOverlay = () => {
+    overlay.classList.remove('show');
+};
+
+overlay.style.display = 'flex';
+showOverlay();
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
