@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
-    const audioPlayer = document.getElementById('audio-player');
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayAudio = document.getElementById('overlay-audio');
     const quoteText = document.getElementById('quote-text');
+    const closeBtn = document.getElementById('close-btn');
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
+        const imgSrc = item.querySelector('img').src;
         const quote = item.getAttribute('data-quote');
 
-        audioPlayer.src = musicSrc;
-        audioPlayer.style.display = 'block';
-        audioPlayer.play();
-
+        overlayImage.src = imgSrc;
+        overlayAudio.src = musicSrc;
+        overlayAudio.style.display = 'block';
+        overlayAudio.play();
         quoteText.textContent = quote;
+
+        overlay.style.display = 'flex';
     };
 
     items.forEach((item) => {
@@ -19,11 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
-    const closeBtn = document.getElementById('close-btn');
     closeBtn.addEventListener('click', () => {
-        const overlay = document.getElementById('overlay');
         overlay.style.display = 'none';
-        const overlayAudio = document.getElementById('overlay-audio');
         overlayAudio.pause();
         overlayAudio.currentTime = 0;
     });

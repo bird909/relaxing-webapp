@@ -22,11 +22,11 @@ header {
     margin: 0 auto;
 }
 
-.gallery {
+.row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .item {
@@ -37,6 +37,7 @@ header {
     cursor: pointer;
     overflow: hidden;
     transition: transform 0.3s;
+    flex: 0 0 48%;
 }
 
 .item img {
@@ -44,22 +45,23 @@ header {
     display: block;
 }
 
-.item .overlay-text {
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1.2em;
-}
-
 .item:hover {
     transform: scale(1.05);
 }
 
-#quote-text {
+.text-block {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 0 0 48%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#quote-text-1, #quote-text-2, #quote-text-3, #quote-text-4, #quote-text-5 {
     font-size: 1.5em;
 }
 
@@ -109,12 +111,13 @@ header {
 
 /* 추가할 미디어 쿼리 예시 */
 @media (max-width: 600px) {
-    .gallery {
+    .row {
         flex-direction: column;
         align-items: center;
     }
 
-    .item {
+    .item, .text-block {
         max-width: 90%;
+        margin-bottom: 20px;
     }
 }
