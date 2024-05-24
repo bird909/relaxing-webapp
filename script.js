@@ -17,8 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
             quotes = data;
             items.forEach((item, index) => {
                 const button = item.querySelector('.play-btn');
-                button.addEventListener('click', () => handleItemClick(item));
-                button.addEventListener('touchstart', () => handleItemClick(item));
+                button.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    handleItemClick(item);
+                });
+                button.addEventListener('touchstart', (event) => {
+                    event.stopPropagation();
+                    handleItemClick(item);
+                });
             });
         });
 
