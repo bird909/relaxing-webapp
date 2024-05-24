@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayAudio = document.getElementById('overlay-audio');
     const overlayQuoteText = document.getElementById('overlay-quote-text');
     const closeBtn = document.getElementById('close-btn');
+    const items = document.querySelectorAll('.item');
 
     // JSON 파일에서 명언 로드
     fetch('quotes.json')
@@ -20,28 +21,26 @@ document.addEventListener('DOMContentLoaded', () => {
             quoteText.textContent = quote.quote;
             authorText.textContent = `- ${quote.author}`;
             translationText.textContent = quote.translation;
+
+            // 아이템 클릭 시 명언도 변경
+            items.forEach((item, index) => {
+                item.addEventListener('click', () => handleItemClick(item, quotes[index % quotes.length]));
+                item.addEventListener('touchstart', () => handleItemClick(item, quotes[index % quotes.length]));
+            });
         });
 
-    const items = document.querySelectorAll('.item');
-
-    const handleItemClick = (item) => {
+    const handleItemClick = (item, quote) => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
-        const quote = item.getAttribute('data-quote');
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
         overlayAudio.style.display = 'block';
         overlayAudio.play();
-        overlayQuoteText.textContent = quote;
+        overlayQuoteText.textContent = quote.quote;
 
         overlay.style.display = 'flex';
     };
-
-    items.forEach((item) => {
-        item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
-    });
 
     closeBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
