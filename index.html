@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relaxing Tree</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Relaxing Tree</h1>
-    <p>Click on an image to play the corresponding music.</p>
-    
-    <div class="gallery">
-        <div class="item" data-music="relaxing_music_1.mp3">
-            <img src="relaxing_photo_1.png" alt="Relaxing Photo 1">
-        </div>
-        <div class="item" data-music="relaxing_music_2.mp3">
-            <img src="relaxing_photo_2.png" alt="Relaxing Photo 2">
-        </div>
-        <div class="item" data-music="relaxing_music_3.mp3">
-            <img src="relaxing_photo_3.png" alt="Relaxing Photo 3">
-        </div>
-        <div class="item" data-music="relaxing_music_4.mp3">
-            <img src="relaxing_photo_4.png" alt="Relaxing Photo 4">
-        </div>
-        <div class="item" data-music="relaxing_music_5.mp3">
-            <img src="relaxing_photo_5.png" alt="Relaxing Photo 5">
+    <header>
+        <h1 class="main-title">Relaxing Tree</h1>
+    </header>
+    <div class="container">
+        <div class="gallery">
+            <div class="item" data-music="relaxing_music_1.mp3" data-quote="The best way to predict the future is to create it.">
+                <img src="relaxing_photo_1.png" alt="Relaxing Photo 1">
+                <div class="overlay-text">PACKAGE ONE</div>
+            </div>
+            <div class="item" data-music="relaxing_music_2.mp3" data-quote="Do what you can, with what you have, where you are.">
+                <img src="relaxing_photo_2.png" alt="Relaxing Photo 2">
+                <div class="overlay-text">PACKAGE TWO</div>
+            </div>
+            <div class="item" data-music="relaxing_music_3.mp3" data-quote="Success is not the key to happiness. Happiness is the key to success.">
+                <img src="relaxing_photo_3.png" alt="Relaxing Photo 3">
+                <div class="overlay-text">PACKAGE THREE</div>
+            </div>
         </div>
     </div>
 
@@ -35,7 +35,7 @@
                 <p id="quote-text">This is where the quote will appear.</p>
             </div>
             <audio id="overlay-audio" controls></audio>
-            <button id="close-btn">Close</button>
+            <button id="close-btn" class="close-btn">&times;</button>
         </div>
     </div>
 
