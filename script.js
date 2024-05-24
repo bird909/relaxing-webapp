@@ -16,8 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             quotes = data;
             items.forEach((item, index) => {
-                item.addEventListener('click', () => handleItemClick(item));
-                item.addEventListener('touchstart', () => handleItemClick(item));
+                const button = item.querySelector('.transparent-btn');
+                button.addEventListener('click', () => handleItemClick(item));
+                button.addEventListener('touchstart', () => handleItemClick(item));
             });
         });
 
