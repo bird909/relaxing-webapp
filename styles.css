@@ -1,3 +1,4 @@
+/* 기존 CSS 유지 */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f8ff;
@@ -40,4 +41,41 @@ p {
     border-bottom: 2px solid #5f9ea0;
     margin-bottom: 10px;
     border-radius: 10px 10px 0 0;
+}
+
+/* 슬라이드쇼 스타일 */
+.slideshow-container {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+.item img {
+    max-width: 100%;
+    border-bottom: 2px solid #5f9ea0;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s; /* 트랜지션 추가 */
+}
+
+.item img:hover {
+    transform: scale(1.1); /* 확대 효과 */
 }
