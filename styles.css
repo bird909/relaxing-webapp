@@ -61,10 +61,6 @@ header {
     text-align: center;
 }
 
-#quote-text-1, #quote-text-2, #quote-text-3, #quote-text-4, #quote-text-5 {
-    font-size: 1.5em;
-}
-
 .overlay {
     position: fixed;
     top: 0;
