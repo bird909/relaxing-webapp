@@ -8,28 +8,37 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close-btn');
     const items = document.querySelectorAll('.item');
 
+    let quotes = [];
+
+    // JSON 파일에서 명언 로드
+    fetch('healing_quotes.json')
+        .then(response => response.json())
+        .then(data => {
+            quotes = data;
+            items.forEach((item, index) => {
+                item.addEventListener('click', () => handleItemClick(item));
+                item.addEventListener('touchstart', () => handleItemClick(item));
+            });
+        });
+
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
-        const quote = item.getAttribute('data-quote');
-        const author = item.getAttribute('data-author');
-        const translation = item.getAttribute('data-translation');
+
+        // 랜덤 명언 선택
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const quote = quotes[randomIndex];
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
         overlayAudio.style.display = 'block';
         overlayAudio.play();
-        overlayQuoteText.textContent = quote;
-        overlayAuthorText.textContent = `- ${author}`;
-        overlayTranslationText.textContent = translation;
+        overlayQuoteText.textContent = quote.quote;
+        overlayAuthorText.textContent = `- ${quote.author}`;
+        overlayTranslationText.textContent = quote.translation;
 
         overlay.style.display = 'flex';
     };
-
-    items.forEach((item) => {
-        item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
-    });
 
     closeBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
