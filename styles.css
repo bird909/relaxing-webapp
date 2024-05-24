@@ -113,4 +113,14 @@ header {
     cursor: pointer;
 }
 
-/* 추가할 미
+/* 추가할 미디어 쿼리 예시 */
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        max-width: 90%;
+    }
+}
