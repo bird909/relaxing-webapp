@@ -109,3 +109,36 @@ header {
         grid-template-columns: 1fr;
     }
 }
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.image-item {
+    position: relative;
+    cursor: pointer;
+    width: calc(33.333% - 10px); /* 3 columns layout with gap */
+}
+
+.image-item img {
+    width: 100%;
+    height: auto;
+}
+
+.image-item::after {
+    content: 'Click to view';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-item:hover::after {
+    opacity: 1;
+}

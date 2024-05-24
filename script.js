@@ -47,3 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.currentTime = 0;
     });
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const imageItems = document.querySelectorAll('.image-item');
+    
+    imageItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const link = item.getAttribute('data-link');
+            window.location.href = link;
+        });
+    });
+});
