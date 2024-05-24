@@ -1,0 +1,26 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #5f9ea0;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #4682b4;
+}
+
+#music, #gallery {
+    margin: 20px;
+}
+
+img {
+    max-width: 300px;
+    margin: 10px;
+}
