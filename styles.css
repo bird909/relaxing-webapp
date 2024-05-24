@@ -22,10 +22,6 @@ header {
     margin: 0 auto;
 }
 
-.quote-container {
-    margin-bottom: 40px;
-}
-
 .gallery {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -47,6 +43,14 @@ header {
     width: 100%;
     height: auto;
     display: block;
+}
+
+.description {
+    color: #000000;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
 }
 
 .item:hover {
