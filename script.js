@@ -1,29 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
-    const audioPlayer = document.getElementById('audio-player');
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlay-image');
+    const overlayAudio = document.getElementById('overlay-audio');
+    const closeBtn = document.getElementById('close-btn');
+    const quoteText = document.getElementById('quote-text');
 
-    items.forEach(item => {
+    const quotes = [
+        "The best way to predict the future is to create it.",
+        "Do what you can, with what you have, where you are.",
+        "Success is not the key to happiness. Happiness is the key to success.",
+        "The only way to do great work is to love what you do.",
+        "Believe you can and you're halfway there."
+    ];
+
+    items.forEach((item, index) => {
         item.addEventListener('click', () => {
             const musicSrc = item.getAttribute('data-music');
-            audioPlayer.src = musicSrc;
-            audioPlayer.style.display = 'block';
-            audioPlayer.play();
+            const imgSrc = item.querySelector('img').src;
+            overlayImage.src = imgSrc;
+            overlayAudio.src = musicSrc;
+            quoteText.textContent = quotes[index];
+            overlay.style.display = 'flex';
+            overlayAudio.play();
         });
     });
 
-    // 슬라이드쇼 기능 추가
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-        let i;
-        const slides = document.querySelectorAll(".mySlides");
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";  
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}    
-        slides[slideIndex-1].style.display = "block";  
-        setTimeout(showSlides, 4000); // 4초마다 이미지 전환
-    }
+    closeBtn.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        overlayAudio.pause();
+        overlayAudio.currentTime = 0;
+    });
 });
