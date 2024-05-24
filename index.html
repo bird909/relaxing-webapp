@@ -3,24 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healing WebApp</title>
+    <title>Relaxing Tree</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to the Healing WebApp</h1>
-    <p>This app provides a relaxing experience with music and photos.</p>
-    <div id="music">
-        <h2>Music</h2>
-        <audio controls>
-            <source src="wild_flowers_344.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+    <h1>Welcome to Relaxing Tree</h1>
+    <p>Click on an image to play the corresponding music.</p>
+    
+    <div class="gallery">
+        <div class="item" data-music="relaxing_music_1.mp3">
+            <img src="relaxing_photo_1.png" alt="Relaxing Photo 1">
+        </div>
+        <div class="item" data-music="relaxing_music_2.mp3">
+            <img src="relaxing_photo_2.png" alt="Relaxing Photo 2">
+        </div>
+        <div class="item" data-music="relaxing_music_3.mp3">
+            <img src="relaxing_photo_3.png" alt="Relaxing Photo 3">
+        </div>
+        <div class="item" data-music="relaxing_music_4.mp3">
+            <img src="relaxing_photo_4.png" alt="Relaxing Photo 4">
+        </div>
+        <div class="item" data-music="relaxing_music_5.mp3">
+            <img src="relaxing_photo_5.png" alt="Relaxing Photo 5">
+        </div>
     </div>
-    <div id="gallery">
-        <h2>Photo Gallery</h2>
-        <img src="relaxing_photo_1.png" alt="Image 1">
-        <img src="relaxing_photo_2.png" alt="Image 2">
-    </div>
+
+    <audio id="audio-player" controls style="display:none;"></audio>
+
     <script src="script.js"></script>
 </body>
 </html>

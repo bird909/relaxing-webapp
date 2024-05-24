@@ -3,7 +3,7 @@ body {
     background-color: #f0f8ff;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 20px;
 }
 
 h1 {
@@ -16,11 +16,28 @@ p {
     color: #4682b4;
 }
 
-#music, #gallery {
-    margin: 20px;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
 }
 
-img {
+.item {
+    background-color: #ffffff;
+    border: 2px solid #5f9ea0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
     max-width: 300px;
-    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.item img {
+    max-width: 100%;
+    border-bottom: 2px solid #5f9ea0;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
 }
