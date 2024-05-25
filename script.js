@@ -2,13 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
     const overlay = document.getElementById('overlay');
     const overlayImage = document.getElementById('overlayImage');
-    const overlayAudio = new Audio();
+    const overlayAudio = document.getElementById('overlayAudio');
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
-
-    overlayAudio.loop = true;
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
@@ -19,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
+        overlayAudio.loop = true;
         overlayAudio.play();
         overlayQuoteText.textContent = quote;
         overlayQuoteTranslation.textContent = translation;

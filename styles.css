@@ -26,8 +26,7 @@ h1 {
 }
 
 .item img {
-    width: 100%;
-    max-width: 300px;
+    width: 300px;
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
@@ -98,6 +97,15 @@ h1 {
     margin: 10px 0;
 }
 
-#overlayAudio {
-    display: none;
+/* Media Queries */
+@media (max-width: 768px) {
+    .item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .overlay-title {
+        font-size: 1em;
+        bottom: 5px;
+    }
 }
