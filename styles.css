@@ -81,3 +81,24 @@ audio {
     margin-top: 1em;
     width: 80%;
 }
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 1024px) {
+    .category {
+        flex: 1 1 calc(50% - 2em);
+    }
+
+    .overlayImage {
+        max-height: 50vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .category {
+        flex: 1 1 calc(100% - 2em);
+    }
+
+    .overlayImage {
+        max-height: 40vh;
+    }
+}
