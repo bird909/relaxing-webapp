@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
     const overlay = document.getElementById('overlay');
-    const closeBtn = document.getElementById('close-btn');
     const overlayImage = document.getElementById('overlayImage');
     const overlayAudio = document.getElementById('overlayAudio');
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
+    const closeBtn = document.getElementById('close-btn');
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.src = musicSrc;
         overlayQuoteText.textContent = quote;
         overlayQuoteTranslation.textContent = translation;
-        overlayQuoteAuthor.textContent = author;
-        
+        overlayQuoteAuthor.textContent = `- ${author}`;
         overlay.style.display = 'flex';
+
         overlayAudio.play();
     };
 
@@ -36,11 +36,5 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.currentTime = 0;
     });
 
-    overlay.addEventListener('click', (e) => {
-        if (e.target === overlay) {
-            overlay.style.display = 'none';
-            overlayAudio.pause();
-            overlayAudio.currentTime = 0;
-        }
-    });
+    // 추가적인 코드가 필요하면 여기에 추가
 });
