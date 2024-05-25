@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('overlayQuoteAuthor').textContent = author;
         
         document.getElementById('overlay').style.display = 'flex';
+
+        const audioElement = document.getElementById('overlayAudio');
+        audioElement.play();
+        audioElement.loop = true;
     };
 
     items.forEach(item => {
@@ -24,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.getElementById('close-btn').addEventListener('click', () => {
         document.getElementById('overlay').style.display = 'none';
-        document.getElementById('overlayAudio').pause();
-        document.getElementById('overlayAudio').currentTime = 0;
+        const audioElement = document.getElementById('overlayAudio');
+        audioElement.pause();
+        audioElement.currentTime = 0;
     });
 });
