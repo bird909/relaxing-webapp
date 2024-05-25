@@ -19,20 +19,15 @@ h1 {
     gap: 1em;
 }
 
-.category {
-    flex: 1 1 calc(33% - 2em);
-    margin: 1em;
-}
-
-.category img {
-    width: 100%;
-    border-radius: 15px;
-}
-
 .item {
     position: relative;
     margin: 1em;
     cursor: pointer;
+}
+
+.item img {
+    width: 100%;
+    border-radius: 15px;
 }
 
 .overlay {
@@ -84,8 +79,13 @@ audio {
 
 /* 반응형 디자인을 위한 미디어 쿼리 */
 @media (max-width: 1024px) {
-    .category {
-        flex: 1 1 calc(50% - 2em);
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .item {
+        max-width: 80%;
     }
 
     .overlayImage {
@@ -94,8 +94,8 @@ audio {
 }
 
 @media (max-width: 768px) {
-    .category {
-        flex: 1 1 calc(100% - 2em);
+    .item {
+        max-width: 90%;
     }
 
     .overlayImage {

@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morning Coffee - Relaxing Tree</title>
+    <title>Category 1 - Morning Piano</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>Morning Coffee</h1>
-    </header>
-    <main>
-        <div class="item" data-music="Day_in_the_Garden_457.mp3" data-quote="Morning is wonderful. Its only drawback is that it comes at such an inconvenient time of day.">
-            <img src="relaxing_photo_12.png" alt="Morning Coffee">
+    <h1>Morning Piano</h1>
+    <div class="gallery">
+        <div class="item" data-music="Morning_Piano_39.mp3" data-quote="A new day brings new hope.">
+            <img src="relaxing_photo_12.png" alt="Morning Photo 1">
         </div>
-        <div class="item" data-music="Morning_Piano_39.mp3" data-quote="The morning was full of sunlight and hope.">
-            <img src="relaxing_photo_15.png" alt="Morning Sunlight">
+        <div class="item" data-music="Day_in_the_Garden_457.mp3" data-quote="Embrace the beauty of the garden.">
+            <img src="relaxing_photo_15.png" alt="Morning Photo 2">
         </div>
-    </main>
-    <div id="overlay" class="overlay">
+    </div>
+
+    <div class="overlay" id="overlay">
         <div class="overlay-content">
-            <button id="close-btn" class="close-btn">X</button>
-            <img id="overlayImage" class="overlayImage">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
             <audio id="overlayAudio" controls></audio>
             <p id="overlayQuoteText" class="overlayQuoteText"></p>
         </div>
     </div>
+
     <script src="../script.js"></script>
 </body>
 </html>
