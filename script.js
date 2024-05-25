@@ -1,4 +1,3 @@
-/* script.js */
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
     const overlay = document.getElementById('overlay');
@@ -7,23 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const closeBtn = document.getElementById('close-btn');
 
-    const handleItemClick = (item) => {
-        const musicSrc = item.getAttribute('data-music');
-        const imgSrc = item.querySelector('img').src;
-        const quote = item.getAttribute('data-quote');
+    items.forEach(item => {
+        item.addEventListener('click', () => {
+            const musicSrc = item.getAttribute('data-music');
+            const imgSrc = item.querySelector('img').src;
+            const quote = item.getAttribute('data-quote');
 
-        overlayImage.src = imgSrc;
-        overlayAudio.src = musicSrc;
-        overlayAudio.style.display = 'block';
-        overlayAudio.play();
-        overlayQuoteText.textContent = quote;
+            overlayImage.src = imgSrc;
+            overlayAudio.src = musicSrc;
+            overlayQuoteText.textContent = quote;
 
-        overlay.style.display = 'flex';
-    };
-
-    items.forEach((item) => {
-        item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
+            overlay.style.display = 'flex';
+            overlayAudio.play();
+        });
     });
 
     closeBtn.addEventListener('click', () => {
