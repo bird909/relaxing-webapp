@@ -13,11 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.style.display = 'block';
-        overlayAudio.play();
         overlayQuoteText.textContent = quote;
-
         overlay.style.display = 'flex';
+        overlayAudio.play();
     };
 
     items.forEach((item) => {
