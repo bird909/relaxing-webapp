@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>명상 피아노</title>
+    <title>Meditation - Relaxing Tree</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <h1>명상 피아노</h1>
-    <div class="gallery">
-        <div class="item" data-music="Meditation_120.mp3">
-            <img src="relaxing_photo_22.png" alt="Image 1">
-            <p>명상</p>
+    <header>
+        <h1>Meditation</h1>
+    </header>
+    <main>
+        <div class="item" data-music="Meditation_120.mp3" data-quote="Quiet the mind and the soul will speak.">
+            <img src="relaxing_photo_22.png" alt="Meditation">
         </div>
-    </div>
-    <div id="overlay">
-        <div id="overlay-content">
-            <button id="close-btn">X</button>
-            <img id="overlay-image" src="" alt="Overlay Image">
-            <audio id="overlay-audio" controls>
-                <source id="overlay-audio-source" src="" type="audio/mpeg">
-            </audio>
-            <p id="overlay-quote"></p>
+    </main>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-btn" class="close-btn">X</button>
+            <img id="overlayImage" class="overlayImage">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
         </div>
     </div>
     <script src="../script.js"></script>

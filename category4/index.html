@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>따뜻한 햇살 아래의 피아노</title>
+    <title>Afternoon Tea - Relaxing Tree</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <h1>따뜻한 햇살 아래의 피아노</h1>
-    <div class="gallery">
-        <div class="item" data-music="Afternoon_Tea_Sunlight_433.mp3">
-            <img src="relaxing_photo_19.png" alt="Image 1">
-            <p>오후의 차</p>
+    <header>
+        <h1>Afternoon Tea</h1>
+    </header>
+    <main>
+        <div class="item" data-music="Afternoon_Tea_Sunlight_433.mp3" data-quote="Tea is the magic key to the vault where my brain is kept.">
+            <img src="relaxing_photo_19.png" alt="Afternoon Tea">
         </div>
-        <div class="item" data-music="When_the_Stars_Align_83.mp3">
-            <img src="relaxing_photo_16.png" alt="Image 2">
-            <p>별이 맞춰질 때</p>
+        <div class="item" data-music="When_the_Stars_Align_83.mp3" data-quote="Take life one cup at a time.">
+            <img src="relaxing_photo_19.png" alt="Evening Stars">
         </div>
-    </div>
-    <div id="overlay">
-        <div id="overlay-content">
-            <button id="close-btn">X</button>
-            <img id="overlay-image" src="" alt="Overlay Image">
-            <audio id="overlay-audio" controls>
-                <source id="overlay-audio-source" src="" type="audio/mpeg">
-            </audio>
-            <p id="overlay-quote"></p>
+    </main>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-btn" class="close-btn">X</button>
+            <img id="overlayImage" class="overlayImage">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
         </div>
     </div>
     <script src="../script.js"></script>

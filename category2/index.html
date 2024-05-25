@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>비오는 날의 피아노</title>
+    <title>Relaxing Sleep - Relaxing Tree</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <h1>비오는 날의 피아노</h1>
-    <div class="gallery">
-        <div class="item" data-music="Rainy_Day_Window_464.mp3">
-            <img src="relaxing_photo_7.png" alt="Image 1">
-            <p>창밖의 비</p>
+    <header>
+        <h1>Relaxing Sleep</h1>
+    </header>
+    <main>
+        <div class="item" data-music="Rainy_Day_Window_464.mp3" data-quote="Sleep is the best meditation.">
+            <img src="relaxing_photo_7.png" alt="Rainy Day">
         </div>
-        <div class="item" data-music="Relaxing_tree_86.mp3">
-            <img src="relaxing_photo_17.png" alt="Image 2">
-            <p>편안한 나무</p>
+        <div class="item" data-music="Relaxing_tree_86.mp3" data-quote="The best bridge between despair and hope is a good night’s sleep.">
+            <img src="relaxing_photo_17.png" alt="Night Relaxation">
         </div>
-    </div>
-    <div id="overlay">
-        <div id="overlay-content">
-            <button id="close-btn">X</button>
-            <img id="overlay-image" src="" alt="Overlay Image">
-            <audio id="overlay-audio" controls>
-                <source id="overlay-audio-source" src="" type="audio/mpeg">
-            </audio>
-            <p id="overlay-quote"></p>
+    </main>
+    <div id="overlay" class="overlay">
+        <div class="overlay-content">
+            <button id="close-btn" class="close-btn">X</button>
+            <img id="overlayImage" class="overlayImage">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
         </div>
     </div>
     <script src="../script.js"></script>
