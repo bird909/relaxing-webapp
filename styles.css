@@ -31,14 +31,14 @@ header h1 {
     padding: 20px;
 }
 
-.item img {
+.category img {
     width: 100%;
     max-width: 300px;
     border-radius: 10px;
     transition: transform 0.3s;
 }
 
-.item img:hover {
+.category img:hover {
     transform: scale(1.05);
 }
 
