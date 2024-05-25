@@ -1,34 +1,34 @@
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
+    margin: 0;
     background-color: #000;
     color: #fff;
     text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-family: 'Dancing Script', cursive;
+    color: #fff;
     margin: 20px 0;
-    font-family: 'Brush Script MT', cursive;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 10px;
 }
 
 .item {
-    margin: 10px;
     position: relative;
+    margin: 10px;
     cursor: pointer;
 }
 
 .item img {
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
     transition: transform 0.3s;
 }
@@ -40,17 +40,13 @@ h1 {
 .overlay-title {
     position: absolute;
     bottom: 10px;
-    left: 0;
-    width: 100%;
-    color: white;
-    font-size: 1.2em;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 .overlay {
@@ -60,54 +56,65 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
+    align-items: center;
     z-index: 1000;
-    color: white;
-    flex-direction: column;
 }
 
 .overlay-content {
-    position: relative;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.overlay-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.overlay-content audio {
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.overlay-content p {
+    margin: 10px 0;
+    color: #fff;
 }
 
 #close-btn {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: transparent;
+    top: 20px;
+    right: 20px;
+    background: none;
     border: none;
-    color: white;
     font-size: 2em;
+    color: #fff;
     cursor: pointer;
 }
 
-.overlayImage {
-    max-width: 90%;
-    max-height: 60vh;
-    margin-bottom: 20px;
-}
-
-.overlayQuoteText,
-.overlayQuoteTranslation,
-.overlayQuoteAuthor {
-    font-size: 1.2em;
-    margin: 10px 0;
-}
-
-/* General styles for all audio elements */
+/* Audio Player Custom Styles */
 audio {
-    width: 90%;
+    width: 100%;
     margin-top: 20px;
-    background-color: #000; /* Background color of the audio player */
-    color: #fff; /* Text color of the audio player */
+    background-color: #000;
+    color: #fff;
 }
 
 /* Specific styles for WebKit browsers (Chrome, Safari) */
 audio::-webkit-media-controls-panel {
-    background-color: #000; /* For Chrome and Safari */
+    background-color: #000;
 }
 
 audio::-webkit-media-controls-play-button,
@@ -115,21 +122,12 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display,
 audio::-webkit-media-controls-timeline,
 audio::-webkit-media-controls-volume-slider {
-    color: #fff; /* For Chrome and Safari */
-}
-
-/* Custom styles for visible controls on Chrome */
-audio::-webkit-media-controls-timeline,
-audio::-webkit-media-controls-current-time-display,
-audio::-webkit-media-controls-time-remaining-display,
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-volume-slider {
-    background-color: #333; /* Dark gray for visibility */
+    color: #fff;
 }
 
 /* Specific styles for non-WebKit browsers (Firefox, Edge) */
 audio::-moz-media-controls-panel {
-    background-color: #000; /* For Firefox */
+    background-color: #000;
 }
 
 audio::-moz-media-controls-play-button,
@@ -137,11 +135,11 @@ audio::-moz-media-controls-current-time-display,
 audio::-moz-media-controls-time-remaining-display,
 audio::-moz-media-controls-timeline,
 audio::-moz-media-controls-volume-slider {
-    color: #fff; /* For Firefox */
+    color: #fff;
 }
 
 audio::-ms-media-controls-panel {
-    background-color: #000; /* For Edge */
+    background-color: #000;
 }
 
 audio::-ms-media-controls-play-button,
@@ -149,35 +147,21 @@ audio::-ms-media-controls-current-time-display,
 audio::-ms-media-controls-time-remaining-display,
 audio::-ms-media-controls-timeline,
 audio::-ms-media-controls-volume-slider {
-    color: #fff; /* For Edge */
+    color: #fff;
 }
 
-/* Main Page Image Scaling */
-.gallery img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    margin: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .gallery img {
-        max-width: 300px;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
-
-
-/* Media Queries */
-@media (max-width: 768px) {
-    .item img {
+@media screen and (min-width: 1024px) {
+    .gallery .item img {
         width: 100%;
         height: auto;
-    }
-
-    .overlay-title {
-        font-size: 1em;
-        bottom: 5px;
+        object-fit: cover;
     }
 }
