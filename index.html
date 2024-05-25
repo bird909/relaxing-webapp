@@ -7,42 +7,37 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Relaxing Tree</h1>
-    </header>
-    <main>
-        <div class="gallery">
-            <div class="category">
-                <a href="category1/index.html">
-                    <img src="relaxing_photo_7.png" alt="Morning Coffee">
-                </a>
-            </div>
-            <div class="category">
-                <a href="category2/index.html">
-                    <img src="relaxing_photo_8.png" alt="Gentle Rain">
-                </a>
-            </div>
-            <div class="category">
-                <a href="category3/index.html">
-                    <img src="relaxing_photo_15.png" alt="Afternoon Cafe">
-                </a>
-            </div>
-            <div class="category">
-                <a href="category4/index.html">
-                    <img src="relaxing_photo_20.png" alt="Evening Tea">
-                </a>
-            </div>
-            <div class="category">
-                <a href="category5/index.html">
-                    <img src="relaxing_photo_21.png" alt="Peaceful Meditation">
-                </a>
-            </div>
-            <div class="category">
-                <a href="category6/index.html">
-                    <img src="relaxing_photo_25.png" alt="Forest Walk">
-                </a>
-            </div>
+    <h1>Relaxing Tree</h1>
+    <div class="gallery">
+        <div class="item" data-url="category1/index.html">
+            <img src="relaxing_photo_7.png" alt="Category 1">
         </div>
-    </main>
+        <div class="item" data-url="category2/index.html">
+            <img src="relaxing_photo_8.png" alt="Category 2">
+        </div>
+        <div class="item" data-url="category3/index.html">
+            <img src="relaxing_photo_15.png" alt="Category 3">
+        </div>
+        <div class="item" data-url="category4/index.html">
+            <img src="relaxing_photo_20.png" alt="Category 4">
+        </div>
+        <div class="item" data-url="category5/index.html">
+            <img src="relaxing_photo_21.png" alt="Category 5">
+        </div>
+        <div class="item" data-url="category6/index.html">
+            <img src="relaxing_photo_25.png" alt="Category 6">
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.item');
+            items.forEach(item => {
+                item.addEventListener('click', () => {
+                    const url = item.getAttribute('data-url');
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
 </body>
 </html>

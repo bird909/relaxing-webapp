@@ -1,3 +1,4 @@
+/* script.js */
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
     const overlay = document.getElementById('overlay');
