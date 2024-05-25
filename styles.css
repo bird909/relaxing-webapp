@@ -141,3 +141,29 @@ audio {
         font-size: 1.2em;
     }
 }
+.overlay-content {
+    /* 기존 스타일에 추가 */
+}
+
+.overlayQuoteTranslation {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.overlayQuoteAuthor {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #ddd;
+}
+
+/* 미디어 쿼리를 사용하여 반응형 디자인 유지 */
+@media (max-width: 600px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .item {
+        max-width: 90%;
+    }
+}
