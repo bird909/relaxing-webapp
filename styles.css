@@ -37,14 +37,16 @@ h1 {
 
 .overlay-title {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 10px 20px;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;  /* Ensures the text doesn't overflow */
     font-size: 1.5em;
-    border-radius: 5px;
-    pointer-events: none;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);  /* Background for better readability */
+    padding: 5px;
+    box-sizing: border-box;  /* Ensures padding doesn't affect size */
 }
 
 .overlay {
@@ -133,5 +135,9 @@ audio {
 
     h1 {
         font-size: 2em;
+    }
+
+    .overlay-title {
+        font-size: 1.2em;
     }
 }
