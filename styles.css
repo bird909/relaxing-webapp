@@ -108,7 +108,6 @@ audio {
     }
 }
 
-/* 추가 미디어 쿼리 */
 @media (max-width: 576px) {
     .item img {
         width: 100%;
@@ -118,5 +117,9 @@ audio {
     .item {
         max-width: 100%;
         margin: 0.5em 0;
+    }
+
+    h1 {
+        font-size: 2em;
     }
 }
