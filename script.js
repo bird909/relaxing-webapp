@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
 
+    overlayAudio.loop = true;
+
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
@@ -17,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.loop = true;
         overlayAudio.play();
         overlayQuoteText.textContent = quote;
         overlayQuoteTranslation.textContent = translation;
