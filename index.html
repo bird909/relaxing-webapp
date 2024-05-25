@@ -19,11 +19,11 @@
         </div>
         <div class="item" data-url="category3/index.html">
             <img src="relaxing_photo_15.png" alt="Comfort Piano">
-            <div class="overlay-title">힘들때 위로가 되는 피아노</div>
+            <div class="overlay-title">힘들 때 위로가 되는 피아노</div>
         </div>
         <div class="item" data-url="category4/index.html">
             <img src="relaxing_photo_20.png" alt="Nature Healing">
-            <div class="overlay-title">자연속에서 힐링</div>
+            <div class="overlay-title">자연 속에서 힐링</div>
         </div>
         <div class="item" data-url="category5/index.html">
             <img src="relaxing_photo_21.png" alt="Focused Meditation">
@@ -38,7 +38,7 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const items = document.querySelectorAll('.item');
-            items.forEach(item => {
+            items.forEach((item) => {
                 item.addEventListener('click', () => {
                     const url = item.getAttribute('data-url');
                     window.location.href = url;
