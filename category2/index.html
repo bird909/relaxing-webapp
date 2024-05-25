@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gentle Rain - Relaxing Tree</title>
+    <title>Category 2 - Rainy Day Piano</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>Gentle Rain</h1>
-    </header>
-    <main>
-        <div class="item" data-music="Rainy_Day_Window_464.mp3" data-quote="Life isn’t about waiting for the storm to pass. It’s about learning to dance in the rain.">
-            <img src="relaxing_photo_8.png" alt="Gentle Rain">
+    <h1>Rainy Day Piano</h1>
+    <div class="gallery">
+        <div class="item" data-music="Rainy_Day_Window_464.mp3" data-quote="Let the rain wash away the pain." data-author="Unknown" data-translation="비가 아픔을 씻어내게 하세요.">
+            <img src="relaxing_photo_8.png" alt="Rainy Day Photo 1">
         </div>
-        <div class="item" data-music="Relaxing_tree_86.mp3" data-quote="Rain showers my spirit and waters my soul.">
-            <img src="relaxing_photo_9.png" alt="Relaxing Tree">
-        </div>
-    </main>
-    <div id="overlay" class="overlay">
-        <div class="overlay-content">
-            <button id="close-btn" class="close-btn">X</button>
-            <img id="overlayImage" class="overlayImage">
-            <audio id="overlayAudio" controls></audio>
-            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+        <div class="item" data-music="Relaxing_tree_86.mp3" data-quote="Nature's symphony." data-author="Unknown" data-translation="자연의 심포니.">
+            <img src="relaxing_photo_9.png" alt="Rainy Day Photo 2">
         </div>
     </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
+            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
+        </div>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>

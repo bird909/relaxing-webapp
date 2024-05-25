@@ -3,29 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afternoon Cafe - Relaxing Tree</title>
+    <title>Category 3 - Coffee Break Piano</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>Afternoon Cafe</h1>
-    </header>
-    <main>
-        <div class="item" data-music="Afternoon_Cafe_406.mp3" data-quote="The afternoon knows what the morning never suspected.">
-            <img src="relaxing_photo_15.png" alt="Afternoon Cafe">
+    <h1>Coffee Break Piano</h1>
+    <div class="gallery">
+        <div class="item" data-music="Afternoon_Cafe_406.mp3" data-quote="A cup of coffee shared with a friend is happiness tasted and time well spent." data-author="Unknown" data-translation="친구와 함께 나누는 한 잔의 커피는 맛본 행복이자 잘 보낸 시간입니다.">
+            <img src="relaxing_photo_15.png" alt="Coffee Break Photo 1">
         </div>
-        <div class="item" data-music="Wild_flowers_344.mp3" data-quote="Afternoons are like coffee breaks for the soul.">
-            <img src="relaxing_photo_18.png" alt="Wild Flowers">
-        </div>
-    </main>
-    <div id="overlay" class="overlay">
-        <div class="overlay-content">
-            <button id="close-btn" class="close-btn">X</button>
-            <img id="overlayImage" class="overlayImage">
-            <audio id="overlayAudio" controls></audio>
-            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+        <div class="item" data-music="Wild_flowers_344.mp3" data-quote="The smell of fresh coffee is one of the world's greatest inventions." data-author="Unknown" data-translation="신선한 커피의 향기는 세계 최고의 발명품 중 하나입니다.">
+            <img src="relaxing_photo_18.png" alt="Coffee Break Photo 2">
         </div>
     </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
+            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
+        </div>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>

@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evening Tea - Relaxing Tree</title>
+    <title>Category 4 - Healing Piano</title>
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
-    <header>
-        <h1>Evening Tea</h1>
-    </header>
-    <main>
-        <div class="item" data-music="Afternoon_Tea_Sunlight_433.mp3" data-quote="Tea is to the body as music is to the soul.">
-            <img src="relaxing_photo_26.png" alt="Evening Tea">
+    <h1>Healing Piano</h1>
+    <div class="gallery">
+        <div class="item" data-music="Afternoon_Tea_Sunlight_433.mp3" data-quote="Music can heal the wounds that medicine cannot touch." data-author="Debasish Mridha" data-translation="음악은 약물이 닿을 수 없는 상처를 치유할 수 있습니다.">
+            <img src="relaxing_photo_19.png" alt="Healing Photo 1">
         </div>
-        <div class="item" data-music="When_the_Stars_Align_83.mp3" data-quote="Enjoying the quiet evening with a cup of tea.">
-            <img src="relaxing_photo_19.png" alt="Evening Stars">
-        </div>
-    </main>
-    <div id="overlay" class="overlay">
-        <div class="overlay-content">
-            <button id="close-btn" class="close-btn">X</button>
-            <img id="overlayImage" class="overlayImage">
-            <audio id="overlayAudio" controls></audio>
-            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+        <div class="item" data-music="When_the_Stars_Align_83.mp3" data-quote="Healing comes in waves and maybe today the wave hits the rocks and that's okay, that's okay, darling. You are still healing, you are still healing." data-author="Ijeoma Umebinyuo" data-translation="치유는 파도처럼 오고 오늘 파도가 바위에 부딪혀도 괜찮아요, 괜찮아요, 여보. 당신은 여전히 치유되고 있습니다.">
+            <img src="relaxing_photo_20.png" alt="Healing Photo 2">
         </div>
     </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
+            <audio id="overlayAudio" controls></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
+            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
+        </div>
+    </div>
+
     <script src="../script.js"></script>
 </body>
 </html>
-
