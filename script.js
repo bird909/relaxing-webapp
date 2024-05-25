@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
         overlayAudio.loop = true;
+        overlayAudio.autoplay = true;
         overlayAudio.play();
         overlayQuoteText.textContent = quote;
         overlayQuoteTranslation.textContent = translation;
