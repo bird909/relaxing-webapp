@@ -118,6 +118,15 @@ audio::-webkit-media-controls-volume-slider {
     color: #fff; /* For Chrome and Safari */
 }
 
+/* Custom styles for visible controls on Chrome */
+audio::-webkit-media-controls-timeline,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display,
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider {
+    background-color: #333; /* Dark gray for visibility */
+}
+
 /* Specific styles for non-WebKit browsers (Firefox, Edge) */
 audio::-moz-media-controls-panel {
     background-color: #000; /* For Firefox */
@@ -142,6 +151,22 @@ audio::-ms-media-controls-timeline,
 audio::-ms-media-controls-volume-slider {
     color: #fff; /* For Edge */
 }
+
+/* Main Page Image Scaling */
+.gallery img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery img {
+        max-width: 300px;
+    }
+}
+
 
 
 /* Media Queries */
