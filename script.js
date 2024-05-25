@@ -13,16 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.style.display = 'block';
-        overlayAudio.play();
         overlayQuoteText.textContent = quote;
-
         overlay.style.display = 'flex';
+        overlayAudio.play();
     };
 
     items.forEach((item) => {
         item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
     closeBtn.addEventListener('click', () => {
