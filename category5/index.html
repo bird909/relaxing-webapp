@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>명상 피아노</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>명상 피아노</h1>
+    <div class="gallery">
+        <div class="item" data-music="Meditation_120.mp3">
+            <img src="relaxing_photo_22.png" alt="Image 1">
+            <p>명상</p>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="overlay-content">
+            <button id="close-btn">X</button>
+            <img id="overlay-image" src="" alt="Overlay Image">
+            <audio id="overlay-audio" controls>
+                <source id="overlay-audio-source" src="" type="audio/mpeg">
+            </audio>
+            <p id="overlay-quote"></p>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>

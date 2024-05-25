@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아침 커피와 함께 듣는 피아노</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>아침 커피와 함께 듣는 피아노</h1>
+    <div class="gallery">
+        <div class="item" data-music="Morning_Piano_39.mp3">
+            <img src="relaxing_photo_12.png" alt="Image 1">
+            <p>편안한 아침</p>
+        </div>
+        <div class="item" data-music="Day_in_the_Garden_457.mp3">
+            <img src="relaxing_photo_15.png" alt="Image 2">
+            <p>정원의 하루</p>
+        </div>
+    </div>
+    <div id="overlay">
+        <div id="overlay-content">
+            <button id="close-btn">X</button>
+            <img id="overlay-image" src="" alt="Overlay Image">
+            <audio id="overlay-audio" controls>
+                <source id="overlay-audio-source" src="" type="audio/mpeg">
+            </audio>
+            <p id="overlay-quote"></p>
+        </div>
+    </div>
+    <script src="../script.js"></script>
+</body>
+</html>
