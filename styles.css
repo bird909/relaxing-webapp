@@ -23,10 +23,14 @@ h1 {
     position: relative;
     margin: 1em;
     cursor: pointer;
+    max-width: 100%;
+    overflow: hidden;
 }
 
 .item img {
     width: 100%;
+    height: auto;
+    display: block;
     border-radius: 15px;
 }
 
