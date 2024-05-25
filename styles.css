@@ -1,169 +1,132 @@
-/* styles.css */
+/* General Styles */
 body {
-    margin: 0;
     font-family: 'Arial', sans-serif;
     background-color: #000;
     color: #fff;
-    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
-    font-family: 'Brush Script MT', cursive;
+    font-family: 'Dancing Script', cursive;
     font-size: 3em;
-    margin: 0.5em 0;
+    margin: 20px 0;
 }
 
 .gallery {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1em;
+    margin: 20px;
 }
 
 .item {
     position: relative;
-    margin: 1em;
+    margin: 10px;
     cursor: pointer;
-    max-width: 100%;
-    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.item:hover {
+    transform: scale(1.05);
 }
 
 .item img {
-    width: 100%;
-    height: auto;
+    max-width: 100%;
+    border-radius: 10px;
     display: block;
-    border-radius: 15px;
 }
 
 .overlay-title {
     position: absolute;
     bottom: 10px;
-    left: 10px;
-    right: 10px;  /* Ensures the text doesn't overflow */
-    font-size: 1.5em;
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);  /* Background for better readability */
-    padding: 5px;
-    box-sizing: border-box;  /* Ensures padding doesn't affect size */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2em;
 }
 
+/* Overlay Styles */
 .overlay {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .overlay-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 10px;
     text-align: center;
+    position: relative;
+    max-width: 80%;
+    max-height: 80%;
+    overflow: auto;
 }
 
-.overlayImage {
+.overlay img {
     max-width: 100%;
-    max-height: 70vh;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 #close-btn {
     position: absolute;
     top: 10px;
     right: 10px;
-    background: transparent;
+    background: none;
     border: none;
-    color: white;
-    font-size: 2em;
+    font-size: 24px;
     cursor: pointer;
+    color: #000;
 }
 
-.overlayQuoteText {
-    margin-top: 1em;
-    font-size: 1.2em;
+.overlayQuoteText,
+.overlayQuoteTranslation,
+.overlayQuoteAuthor {
+    margin: 10px 0;
 }
 
-audio {
-    margin-top: 1em;
-    width: 80%;
-}
-
-/* 반응형 디자인을 위한 미디어 쿼리 */
-@media (max-width: 1024px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .item {
-        max-width: 80%;
-    }
-
-    .overlayImage {
-        max-height: 50vh;
-    }
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
-    .item {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .item img {
         max-width: 90%;
     }
 
-    .overlayImage {
-        max-height: 40vh;
+    .overlay-content {
+        max-width: 90%;
+        max-height: 90%;
     }
 }
 
-@media (max-width: 576px) {
-    .item img {
-        width: 100%;
-        height: auto;
-    }
-
-    .item {
-        max-width: 100%;
-        margin: 0.5em 0;
-    }
-
+@media (max-width: 480px) {
     h1 {
         font-size: 2em;
     }
 
-    .overlay-title {
-        font-size: 1.2em;
+    .item img {
+        max-width: 100%;
     }
-}
-.overlay-content {
-    /* 기존 스타일에 추가 */
-}
 
-.overlayQuoteTranslation {
-    margin-top: 10px;
-    font-size: 1.2em;
-    color: #fff;
-}
-
-.overlayQuoteAuthor {
-    margin-top: 5px;
-    font-size: 1em;
-    color: #ddd;
-}
-
-/* 미디어 쿼리를 사용하여 반응형 디자인 유지 */
-@media (max-width: 600px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-    .item {
-        max-width: 90%;
+    .overlay-content {
+        max-width: 95%;
+        max-height: 95%;
     }
 }

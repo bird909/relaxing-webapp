@@ -1,12 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const overlayAudio = document.getElementById('overlayAudio');
-    const overlayQuoteText = document.getElementById('overlayQuoteText');
-    const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
-    const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
-    const closeBtn = document.getElementById('close-btn');
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
@@ -15,26 +8,23 @@ document.addEventListener('DOMContentLoaded', () => {
         const translation = item.getAttribute('data-translation');
         const author = item.getAttribute('data-author');
 
-        overlayImage.src = imgSrc;
-        overlayAudio.src = musicSrc;
-        overlayQuoteText.textContent = quote;
-        overlayQuoteTranslation.textContent = translation;
-        overlayQuoteAuthor.textContent = `- ${author}`;
-        overlay.style.display = 'flex';
-
-        overlayAudio.play();
+        document.getElementById('overlayImage').src = imgSrc;
+        document.getElementById('overlayAudio').src = musicSrc;
+        document.getElementById('overlayQuoteText').textContent = quote;
+        document.getElementById('overlayQuoteTranslation').textContent = translation;
+        document.getElementById('overlayQuoteAuthor').textContent = author;
+        
+        document.getElementById('overlay').style.display = 'flex';
     };
 
-    items.forEach((item) => {
+    items.forEach(item => {
         item.addEventListener('click', () => handleItemClick(item));
         item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
-    closeBtn.addEventListener('click', () => {
-        overlay.style.display = 'none';
-        overlayAudio.pause();
-        overlayAudio.currentTime = 0;
+    document.getElementById('close-btn').addEventListener('click', () => {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('overlayAudio').pause();
+        document.getElementById('overlayAudio').currentTime = 0;
     });
-
-    // 추가적인 코드가 필요하면 여기에 추가
 });
