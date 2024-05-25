@@ -97,6 +97,10 @@ h1 {
     margin: 10px 0;
 }
 
+audio {
+    width: 90%;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
     .item img {
