@@ -35,12 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < playlist.length) {
             playCurrentTrack();
         } else {
-            overlayAudio.currentTime = 0;
+            currentTrackIndex = 0; // Reset the track index to the beginning
+            playCurrentTrack();
         }
     });
 
     items.forEach((item) => {
         item.addEventListener('click', () => handleItemClick(item));
+        item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
     closeBtn.addEventListener('click', () => {
