@@ -12,28 +12,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
         const quote = item.getAttribute('data-quote');
-        const author = item.getAttribute('data-author');
         const translation = item.getAttribute('data-translation');
+        const author = item.getAttribute('data-author');
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.loop = true;
-        overlayAudio.autoplay = true;
         overlayAudio.play();
         overlayQuoteText.textContent = quote;
         overlayQuoteTranslation.textContent = translation;
-        overlayQuoteAuthor.textContent = `- ${author}`;
+        overlayQuoteAuthor.textContent = author;
 
         overlay.style.display = 'flex';
     };
 
     items.forEach((item) => {
         item.addEventListener('click', () => handleItemClick(item));
+        item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
     closeBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         overlayAudio.pause();
         overlayAudio.currentTime = 0;
+    });
+
+    overlayAudio.addEventListener('ended', () => {
+        overlayAudio.currentTime = 0;
+        overlayAudio.play();
     });
 });
