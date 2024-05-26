@@ -10,43 +10,43 @@
     <h1>Relaxing Tree</h1>
     <p>Click on an image to explore the music and quotes.</p>
     <div class="gallery">
-        <div class="item" data-url="category1/index.html">
+        <div class="item" data-url="category1/index.html" data-music="category1/Chill_Piano_514.mp3" data-quote="아침 커피와 함께">
             <img src="relaxing_photo_25.png" alt="아침 커피와 함께">
             <div class="overlay-title">아침 커피와 함께</div>
         </div>
-        <div class="item" data-url="category2/index.html">
+        <div class="item" data-url="category2/index.html" data-music="category2/Day_in_the_Garden_457.mp3" data-quote="편안한 수면 피아노">
             <img src="relaxing_photo_8.png" alt="편안한 수면 피아노">
             <div class="overlay-title">편안한 수면 피아노</div>
         </div>
-        <div class="item" data-url="category3/index.html">
+        <div class="item" data-url="category3/index.html" data-music="category3/Afternoon_Cafe_406.mp3" data-quote="힘든 마음 다독여주는">
             <img src="relaxing_photo_15.png" alt="힘든 마음 다독여주는">
             <div class="overlay-title">힘든 마음 다독여주는</div>
         </div>
-        <div class="item" data-url="category4/index.html">
+        <div class="item" data-url="category4/index.html" data-music="category4/Relaxing_tree_86.mp3" data-quote="자연속에서 힐링">
             <img src="relaxing_photo_20.png" alt="자연속에서 힐링">
             <div class="overlay-title">자연속에서 힐링</div>
         </div>
-        <div class="item" data-url="category5/index.html">
+        <div class="item" data-url="category5/index.html" data-music="category5/When_the_Stars_Align_83.mp3" data-quote="집중과 명상">
             <img src="relaxing_photo_21.png" alt="집중과 명상">
             <div class="overlay-title">집중과 명상</div>
         </div>
-        <div class="item" data-url="category6/index.html">
+        <div class="item" data-url="category6/index.html" data-music="category6/Memories_of_First_Love_496.mp3" data-quote="산책길에서">
             <img src="relaxing_photo_26.png" alt="산책길에서">
             <div class="overlay-title">산책길에서</div>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.item');
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
+            <audio id="overlayAudio" controls autoplay loop></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
+            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
+        </div>
+    </div>
 
-            items.forEach((item) => {
-                item.addEventListener('click', () => {
-                    const url = item.getAttribute('data-url');
-                    window.location.href = url;
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
