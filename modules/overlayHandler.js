@@ -31,3 +31,12 @@ export const closeOverlay = () => {
     overlayAudio.pause();
     overlayAudio.currentTime = 0;
 };
+export const handleItemClick = (item) => {
+    console.log("handleItemClick called");
+
+    const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlayImage');
+    const overlayAudio = document.getElementById('overlayAudio');
+    const overlayQuoteText = document.getElementById('overlayQuoteText');
+    const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
+    const overlayQuote
