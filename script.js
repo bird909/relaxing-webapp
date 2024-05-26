@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let quotes = [];
 
+    // Load quotes from the JSON file
     fetch('../quotes.json')
         .then(response => response.json())
         .then(data => {
@@ -21,8 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
         const quoteIndex = item.getAttribute('data-quote-index');
-        
-        const quote = quotes[quoteIndex];
+
+        // Find the current category
+        const category = document.title.split(' - ')[1].toLowerCase().replace(' ', '');
+
+        // Find the correct quote based on the category and quoteIndex
+        const categoryQuotes = quotes.find(q => q.category === category).quotes;
+        const quote = categoryQuotes[quoteIndex];
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
