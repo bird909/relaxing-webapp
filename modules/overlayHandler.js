@@ -1,6 +1,4 @@
 export const handleItemClick = (item) => {
-    console.log("handleItemClick called");
-
     const overlay = document.getElementById('overlay');
     const overlayImage = document.getElementById('overlayImage');
     const overlayAudio = document.getElementById('overlayAudio');
@@ -14,8 +12,6 @@ export const handleItemClick = (item) => {
     const translation = item.getAttribute('data-translation');
     const author = item.getAttribute('data-author');
 
-    console.log({ musicSrc, imgSrc, quote, translation, author });
-
     overlayImage.src = imgSrc;
     overlayAudio.src = musicSrc;
     overlayAudio.loop = true;
@@ -28,8 +24,6 @@ export const handleItemClick = (item) => {
 };
 
 export const closeOverlay = () => {
-    console.log("closeOverlay called");
-
     const overlay = document.getElementById('overlay');
     const overlayAudio = document.getElementById('overlayAudio');
 

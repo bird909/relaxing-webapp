@@ -3,50 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relaxing Tree</title>
+    <title>Relaxing Web App</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Relaxing Tree</h1>
-    <p>Click on an image to explore the music and quotes.</p>
+    <h1>Relaxing Web App</h1>
     <div class="gallery">
-        <div class="item" data-url="category1/index.html">
-            <img src="relaxing_photo_25.png" alt="아침 커피와 함께">
-            <div class="overlay-title">아침 커피와 함께</div>
-        </div>
-        <div class="item" data-url="category2/index.html">
-            <img src="relaxing_photo_8.png" alt="편안한 수면 피아노">
-            <div class="overlay-title">편안한 수면 피아노</div>
-        </div>
-        <div class="item" data-url="category3/index.html">
-            <img src="relaxing_photo_15.png" alt="힘든 마음 다독여주는">
-            <div class="overlay-title">힘든 마음 다독여주는</div>
-        </div>
-        <div class="item" data-url="category4/index.html">
-            <img src="relaxing_photo_20.png" alt="자연속에서 힐링">
-            <div class="overlay-title">자연속에서 힐링</div>
-        </div>
-        <div class="item" data-url="category5/index.html">
-            <img src="relaxing_photo_21.png" alt="집중과 명상">
-            <div class="overlay-title">집중과 명상</div>
-        </div>
-        <div class="item" data-url="category6/index.html">
-            <img src="relaxing_photo_26.png" alt="산책길에서">
-            <div class="overlay-title">산책길에서</div>
+        <!-- Gallery items will be added here dynamically -->
+    </div>
+
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <button id="close-btn">×</button>
+            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
+            <audio id="overlayAudio" controls autoplay loop></audio>
+            <p id="overlayQuoteText" class="overlayQuoteText"></p>
+            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
+            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
         </div>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.item');
-
-            items.forEach((item) => {
-                item.addEventListener('click', () => {
-                    const url = item.getAttribute('data-url');
-                    window.location.href = url;
-                });
-            });
-        });
-    </script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>
