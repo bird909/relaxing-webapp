@@ -1,3 +1,4 @@
+// main.js
 import { initializeGallery } from './modules/galleryInitializer.js';
 import { closeOverlay } from './modules/overlayHandler.js';
 

@@ -1,3 +1,4 @@
+// modules/overlayHandler.js
 export const handleItemClick = (item) => {
     const overlay = document.getElementById('overlay');
     const overlayImage = document.getElementById('overlayImage');
