@@ -60,6 +60,7 @@ h1 {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+    overflow: auto; /* 스크롤을 가능하게 설정 */
 }
 
 .overlay-content {
@@ -73,14 +74,14 @@ h1 {
     max-width: 90%;
 }
 
-.overlay-content img {
+.overlay img {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
 }
 
-.overlay-content audio {
+.overlay audio {
     width: 100%;
     max-width: 500px;
     margin-bottom: 20px;
@@ -88,7 +89,7 @@ h1 {
     color: #fff;
 }
 
-.overlay-content p {
+.overlay p {
     margin: 10px 0;
     color: #fff;
 }
@@ -102,6 +103,7 @@ h1 {
     font-size: 2em;
     color: #fff;
     cursor: pointer;
+    padding: 10px; /* 터치 장치에서 클릭 영역 확대 */
 }
 
 /* Audio Player Custom Styles */
