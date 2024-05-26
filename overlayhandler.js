@@ -25,20 +25,3 @@ export const closeOverlay = () => {
     overlayAudio.pause();
     overlayAudio.currentTime = 0;
 };
-import { handleItemClick } from './overlayHandler.js';
-
-export const initializeGallery = () => {
-    const items = document.querySelectorAll('.item');
-
-    items.forEach((item) => {
-        item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
-    });
-};
-import { initializeGallery } from './modules/galleryInitializer.js';
-import { closeOverlay } from './modules/overlayHandler.js';
-
-document.addEventListener('DOMContentLoaded', () => {
-    initializeGallery();
-    document.getElementById('close-btn').addEventListener('click', closeOverlay);
-});
