@@ -46,7 +46,7 @@ h1 {
     color: #fff;
     padding: 5px;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 .overlay {
@@ -114,7 +114,8 @@ audio {
 
 /* Specific styles for WebKit browsers (Chrome, Safari) */
 audio::-webkit-media-controls-panel {
-    background-color: #000;
+    background-color: #f0f0f0; /* 연한 회색 배경 */
+    border-radius: 10px; /* 테두리 둥글게 */
 }
 
 audio::-webkit-media-controls-play-button,
@@ -122,7 +123,7 @@ audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display,
 audio::-webkit-media-controls-timeline,
 audio::-webkit-media-controls-volume-slider {
-    color: #fff;
+    color: #000; /* 검은색 아이콘 */
 }
 
 /* Specific styles for non-WebKit browsers (Firefox, Edge) */
@@ -156,6 +157,10 @@ audio::-ms-media-controls-volume-slider {
         flex-direction: column;
         align-items: center;
     }
+
+    .overlay-title {
+        font-size: 1em;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -163,5 +168,9 @@ audio::-ms-media-controls-volume-slider {
         width: 100%;
         height: auto;
         object-fit: cover;
+    }
+
+    h1, .overlay-title {
+        font-size: 2em;
     }
 }
