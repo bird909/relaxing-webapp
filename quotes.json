@@ -1,0 +1,176 @@
+[
+    {
+        "category": "category1",
+        "quotes": [
+            {
+                "music": "Chill_Piano_514.mp3",
+                "quote": "Believe you can and you're halfway there.",
+                "translation": "당신이 할 수 있다고 믿는다면 당신은 이미 반쯤 도착한 것입니다.",
+                "author": "Theodore Roosevelt"
+            },
+            {
+                "music": "Day_in_the_Garden_457.mp3",
+                "quote": "Embrace the beauty of the garden.",
+                "translation": "정원의 아름다움을 포용하세요.",
+                "author": "Unknown"
+            },
+            {
+                "music": "Morning_Peace_678.mp3",
+                "quote": "The early morning has gold in its mouth.",
+                "translation": "이른 아침에는 황금이 입에 있다.",
+                "author": "Benjamin Franklin"
+            },
+            {
+                "music": "Gentle_Rain_324.mp3",
+                "quote": "Every morning is a fresh start.",
+                "translation": "매일 아침은 새로운 시작이다.",
+                "author": "Unknown"
+            }
+        ]
+    },
+    {
+        "category": "category2",
+        "quotes": [
+            {
+                "music": "Rainy_Day_Window_464.mp3",
+                "quote": "The best preparation for tomorrow is doing your best today.",
+                "translation": "내일을 위한 최고의 준비는 오늘 최선을 다하는 것입니다.",
+                "author": "H. Jackson Brown, Jr."
+            },
+            {
+                "music": "Relaxing_tree_86.mp3",
+                "quote": "Let the rain wash away all the pain of yesterday.",
+                "translation": "비가 어제의 모든 고통을 씻어내게 하세요.",
+                "author": "Unknown"
+            },
+            {
+                "music": "Soft_Drizzle_489.mp3",
+                "quote": "Rain is grace; rain is the sky descending to the earth.",
+                "translation": "비는 은혜입니다; 비는 하늘이 땅으로 내려오는 것입니다.",
+                "author": "John Updike"
+            },
+            {
+                "music": "Calm_Storm_212.mp3",
+                "quote": "Some people feel the rain, others just get wet.",
+                "translation": "어떤 사람들은 비를 느끼고, 다른 사람들은 그냥 젖는다.",
+                "author": "Bob Marley"
+            }
+        ]
+    },
+    {
+        "category": "category3",
+        "quotes": [
+            {
+                "music": "Afternoon_Cafe_406.mp3",
+                "quote": "Happiness is a cup of coffee and a good book.",
+                "translation": "행복은 한 잔의 커피와 좋은 책입니다.",
+                "author": "Unknown"
+            },
+            {
+                "music": "Cozy_Fireplace_193.mp3",
+                "quote": "Coffee is a hug in a mug.",
+                "translation": "커피는 컵 안의 포옹이다.",
+                "author": "Unknown"
+            },
+            {
+                "music": "Sunset_Relax_784.mp3",
+                "quote": "Coffee and friends make the perfect blend.",
+                "translation": "커피와 친구는 완벽한 조화를 이룬다.",
+                "author": "Unknown"
+            },
+            {
+                "music": "Cafe_Ambience_320.mp3",
+                "quote": "Life begins after coffee.",
+                "translation": "삶은 커피 후에 시작된다.",
+                "author": "Unknown"
+            }
+        ]
+    },
+    {
+        "category": "category4",
+        "quotes": [
+            {
+                "music": "Afternoon_Tea_Sunlight_433.mp3",
+                "quote": "Nature always wears the colors of the spirit.",
+                "translation": "자연은 항상 정신의 색을 입는다.",
+                "author": "Ralph Waldo Emerson"
+            },
+            {
+                "music": "Birds_Chirping_112.mp3",
+                "quote": "Look deep into nature, and then you will understand everything better.",
+                "translation": "자연을 깊이 들여다보라, 그러면 모든 것을 더 잘 이해하게 될 것이다.",
+                "author": "Albert Einstein"
+            },
+            {
+                "music": "Forest_Walk_552.mp3",
+                "quote": "In every walk with nature, one receives far more than he seeks.",
+                "translation": "자연과 함께하는 모든 산책에서 사람은 자신이 찾는 것보다 훨씬 더 많은 것을 얻는다.",
+                "author": "John Muir"
+            },
+            {
+                "music": "Stream_Sounds_295.mp3",
+                "quote": "Adopt the pace of nature: her secret is patience.",
+                "translation": "자연의 속도를 따르라: 그녀의 비밀은 인내다.",
+                "author": "Ralph Waldo Emerson"
+            }
+        ]
+    },
+    {
+        "category": "category5",
+        "quotes": [
+            {
+                "music": "Meditation_120.mp3",
+                "quote": "The mind is everything. What you think you become.",
+                "translation": "마음이 전부입니다. 당신이 생각하는 것이 당신이 됩니다.",
+                "author": "Buddha"
+            },
+            {
+                "music": "Deep_Breathing_432.mp3",
+                "quote": "The quieter you become, the more you can hear.",
+                "translation": "당신이 조용해질수록 더 많이 들을 수 있습니다.",
+                "author": "Ram Dass"
+            },
+            {
+                "music": "Calm_Mind_101.mp3",
+                "quote": "Peace comes from within. Do not seek it without.",
+                "translation": "평화는 내면에서 옵니다. 그것을 외부에서 찾지 마세요.",
+                "author": "Buddha"
+            },
+            {
+                "music": "Focus_Melody_568.mp3",
+                "quote": "Inhale the future, exhale the past.",
+                "translation": "미래를 들이마시고, 과거를 내쉬세요.",
+                "author": "Unknown"
+            }
+        ]
+    },
+    {
+        "category": "category6",
+        "quotes": [
+            {
+                "music": "Memories_of_First_Love_496.mp3",
+                "quote": "The best thing to hold onto in life is each other.",
+                "translation": "삶에서 붙잡을 수 있는 가장 좋은 것은 서로입니다.",
+                "author": "Audrey Hepburn"
+            },
+            {
+                "music": "Soft_Piano_59.mp3",
+                "quote": "True love stories never have endings.",
+                "translation": "진정한 사랑 이야기는 결코 끝이 없습니다.",
+                "author": "Richard Bach"
+            },
+            {
+                "music": "Evening_Stars_322.mp3",
+                "quote": "Love is composed of a single soul inhabiting two bodies.",
+                "translation": "사랑은 두 몸에 깃든 하나의 영혼으로 이루어집니다.",
+                "author": "Aristotle"
+            },
+            {
+                "music": "Quiet_Night_243.mp3",
+                "quote": "Love recognizes no barriers.",
+                "translation": "사랑은 어떤 장벽도 인식하지 않습니다.",
+                "author": "Maya Angelou"
+            }
+        ]
+    }
+]
