@@ -35,21 +35,6 @@
             <div class="overlay-title">산책길에서</div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.item');
-
-            items.forEach((item) => {
-                item.addEventListener('click', () => {
-                    const url = item.getAttribute('data-url');
-                    window.location.href = url;
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-<div class="item" tabindex="0" role="button" aria-label="Morning Coffee">
-    <img src="relaxing_photo_25.png" alt="Morning Coffee with Relaxing Piano">
-</div>
