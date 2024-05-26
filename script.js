@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentTrackIndex = 0;
     let quotes = [];
 
-    fetch('quotes.json')
+    fetch('../quotes.json')
         .then(response => response.json())
         .then(data => {
             quotes = data;
