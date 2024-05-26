@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Relaxing Tree - A web app for relaxing music and images">
+    <meta name="keywords" content="relaxing music, meditation, piano music, relaxation, stress relief">
+    <meta name="author" content="Your Name">
     <title>Relaxing Tree</title>
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,42 +14,30 @@
     <p>Click on an image to explore the music and quotes.</p>
     <div class="gallery">
         <div class="item" data-url="category1/index.html">
-            <img src="relaxing_photo_25.png" alt="아침 커피와 함께">
-            <div class="overlay-title">아침 커피와 함께</div>
+            <img src="relaxing_photo_25.png" alt="Morning Coffee">
+            <div class="overlay-title">Morning Coffee</div>
         </div>
         <div class="item" data-url="category2/index.html">
-            <img src="relaxing_photo_8.png" alt="편안한 수면 피아노">
-            <div class="overlay-title">편안한 수면 피아노</div>
+            <img src="relaxing_photo_8.png" alt="Peaceful Sleep Piano">
+            <div class="overlay-title">Peaceful Sleep Piano</div>
         </div>
         <div class="item" data-url="category3/index.html">
-            <img src="relaxing_photo_15.png" alt="힘든 마음 다독여주는">
-            <div class="overlay-title">힘든 마음 다독여주는</div>
+            <img src="relaxing_photo_15.png" alt="Piano That Comforts the Troubled Mind">
+            <div class="overlay-title">Piano That Comforts the Troubled Mind</div>
         </div>
         <div class="item" data-url="category4/index.html">
-            <img src="relaxing_photo_20.png" alt="자연속에서 힐링">
-            <div class="overlay-title">자연속에서 힐링</div>
+            <img src="relaxing_photo_20.png" alt="Healing in Nature">
+            <div class="overlay-title">Healing in Nature</div>
         </div>
         <div class="item" data-url="category5/index.html">
-            <img src="relaxing_photo_21.png" alt="집중과 명상">
-            <div class="overlay-title">집중과 명상</div>
+            <img src="relaxing_photo_21.png" alt="Focus and Meditation">
+            <div class="overlay-title">Focus and Meditation</div>
         </div>
         <div class="item" data-url="category6/index.html">
-            <img src="relaxing_photo_26.png" alt="산책길에서">
-            <div class="overlay-title">산책길에서</div>
+            <img src="relaxing_photo_26.png" alt="Relaxing in the Mountains">
+            <div class="overlay-title">Relaxing in the Mountains</div>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const items = document.querySelectorAll('.item');
-
-            items.forEach((item) => {
-                item.addEventListener('click', () => {
-                    const url = item.getAttribute('data-url');
-                    window.location.href = url;
-                });
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
