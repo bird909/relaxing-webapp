@@ -4,20 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayImage = document.getElementById('overlayImage');
     const overlayAudio = document.getElementById('overlayAudio');
     const overlayQuoteText = document.getElementById('overlayQuoteText');
+    const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
+    const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
+    
+    let quotes = [];
+
+    fetch('../quotes.json')
+        .then(response => response.json())
+        .then(data => {
+            quotes = data;
+        })
+        .catch(error => console.error('Error loading quotes:', error));
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
-        const quote = item.getAttribute('data-quote');
+        const quoteIndex = item.getAttribute('data-quote-index');
+        
+        const quote = quotes[quoteIndex];
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.loop = true;
+        overlayQuoteText.textContent = quote.quote;
+        overlayQuoteTranslation.textContent = quote.translation;
+        overlayQuoteAuthor.textContent = `- ${quote.author}`;
+        
+        overlay.style.display = 'block';
         overlayAudio.play();
-        overlayQuoteText.textContent = quote;
-
-        overlay.style.display = 'flex';
     };
 
     items.forEach((item) => {
