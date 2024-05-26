@@ -8,25 +8,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
 
-    let currentTrackIndex = 0;
     let tracks = [];
 
-    fetch('quotes.json')
+    // JSON 파일에서 데이터 로드
+    fetch('../quotes.json')
         .then(response => response.json())
         .then(data => {
             const category = document.querySelector('body').dataset.category;
             const categoryData = data.find(cat => cat.category === category);
             tracks = categoryData ? categoryData.quotes : [];
-        });
+        })
+        .catch(error => console.error('Error loading quotes:', error));
 
     const getRandomQuote = () => {
         const randomIndex = Math.floor(Math.random() * tracks.length);
         return tracks[randomIndex];
     };
 
-    const loadTrack = () => {
-        const track = getRandomQuote();
-        overlayImage.src = items[currentTrackIndex].querySelector('img').src;
+    const loadTrack = (track) => {
+        const item = items[currentTrackIndex];
+        overlayImage.src = item.querySelector('img').src;
         overlayAudio.src = track.music;
         overlayAudio.play();
         overlayQuoteText.textContent = track.quote;
@@ -36,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const handleItemClick = (index) => {
         currentTrackIndex = index;
-        loadTrack();
+        const track = getRandomQuote();
+        loadTrack(track);
         overlay.style.display = 'flex';
     };
 
@@ -46,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     overlayAudio.addEventListener('ended', () => {
-        loadTrack();
+        const track = getRandomQuote();
+        loadTrack(track);
     });
 
     closeBtn.addEventListener('click', () => {
