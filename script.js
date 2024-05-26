@@ -7,30 +7,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteTranslation = document.getElementById('overlayQuoteTranslation');
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
-
-    const handleItemClick = (item) => {
-        const musicSrc = item.getAttribute('data-music');
-        const imgSrc = item.querySelector('img').src;
-        const quote = item.getAttribute('data-quote');
-        const translation = item.getAttribute('data-translation');
-        const author = item.getAttribute('data-author');
-
-        overlayImage.src = imgSrc;
-        overlayAudio.src = musicSrc;
-        overlayAudio.loop = true;
+    
+    let currentTrackIndex = 0;
+    const tracks = Array.from(items).map(item => ({
+        musicSrc: item.getAttribute('data-music'),
+        imgSrc: item.querySelector('img').src,
+        quote: item.getAttribute('data-quote'),
+        translation: item.getAttribute('data-translation'),
+        author: item.getAttribute('data-author')
+    }));
+    
+    const loadTrack = (index) => {
+        const track = tracks[index];
+        overlayImage.src = track.imgSrc;
+        overlayAudio.src = track.musicSrc;
         overlayAudio.play();
-        overlayQuoteText.textContent = quote;
-        overlayQuoteTranslation.textContent = translation;
-        overlayQuoteAuthor.textContent = author;
-
+        overlayQuoteText.textContent = track.quote;
+        overlayQuoteTranslation.textContent = track.translation;
+        overlayQuoteAuthor.textContent = track.author;
+    };
+    
+    const handleItemClick = (index) => {
+        currentTrackIndex = index;
+        loadTrack(currentTrackIndex);
         overlay.style.display = 'flex';
     };
-
-    items.forEach((item) => {
-        item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item));
+    
+    items.forEach((item, index) => {
+        item.addEventListener('click', () => handleItemClick(index));
+        item.addEventListener('touchstart', () => handleItemClick(index));
     });
-
+    
+    overlayAudio.addEventListener('ended', () => {
+        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+        loadTrack(currentTrackIndex);
+    });
+    
     closeBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         overlayAudio.pause();
