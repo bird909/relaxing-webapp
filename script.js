@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const playCurrentTrack = () => {
         overlayAudio.src = playlist[currentTrackIndex];
+        overlayAudio.loop = false; // 개별 트랙의 반복을 방지하기 위해 loop를 false로 설정
         overlayAudio.play();
     };
 
@@ -35,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < playlist.length) {
             playCurrentTrack();
         } else {
-            currentTrackIndex = 0;  // 다시 첫 번째 트랙으로 돌아감
-            playCurrentTrack();     // 첫 번째 트랙 재생
+            currentTrackIndex = 0; // 마지막 곡이 끝나면 첫 곡으로 돌아가기
+            playCurrentTrack();
         }
     });
 
