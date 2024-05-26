@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < playlist.length) {
             playCurrentTrack();
         } else {
-            currentTrackIndex = 0; // Reset the track index to the beginning
-            playCurrentTrack();
+            currentTrackIndex = 0;  // 다시 첫 번째 트랙으로 돌아감
+            playCurrentTrack();     // 첫 번째 트랙 재생
         }
     });
 
