@@ -6,35 +6,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const closeBtn = document.getElementById('close-btn');
 
+    let currentTrackIndex = 0;
+    let playlist = [];
+
     const handleItemClick = (item) => {
-        const musicSrc = item.getAttribute('data-music');
+        const musicFiles = item.getAttribute('data-music').split(',');
         const imgSrc = item.querySelector('img').src;
         const quote = item.getAttribute('data-quote');
         const translation = item.getAttribute('data-translation');
 
+        playlist = musicFiles;
+        currentTrackIndex = 0;
+
         overlayImage.src = imgSrc;
-        overlayAudio.src = musicSrc;
-        overlayAudio.loop = true; // 자동 반복 재생 설정
-        overlayQuoteText.textContent = `${quote}\n${translation}`;
-        
+        overlayQuoteText.innerHTML = `<p>${quote}</p><p>${translation}</p>`;
         overlay.style.display = 'flex';
+
+        playCurrentTrack();
+    };
+
+    const playCurrentTrack = () => {
+        overlayAudio.src = playlist[currentTrackIndex];
         overlayAudio.play();
     };
 
+    overlayAudio.addEventListener('ended', () => {
+        currentTrackIndex++;
+        if (currentTrackIndex < playlist.length) {
+            playCurrentTrack();
+        } else {
+            overlayAudio.currentTime = 0;
+        }
+    });
+
     items.forEach((item) => {
         item.addEventListener('click', () => handleItemClick(item));
-        item.addEventListener('touchstart', () => handleItemClick(item)); // 모바일 터치 이벤트
     });
 
     closeBtn.addEventListener('click', () => {
         overlay.style.display = 'none';
         overlayAudio.pause();
         overlayAudio.currentTime = 0;
-    });
-
-    // 재생이 종료될 때마다 자동 재생을 보장하기 위해 ended 이벤트 처리
-    overlayAudio.addEventListener('ended', () => {
-        overlayAudio.currentTime = 0;
-        overlayAudio.play();
     });
 });
