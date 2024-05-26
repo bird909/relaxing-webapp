@@ -35,6 +35,18 @@
             <div class="overlay-title">산책길에서</div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.item');
+
+            items.forEach((item) => {
+                item.addEventListener('click', () => {
+                    const url = item.getAttribute('data-url');
+                    window.location.href = url;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
