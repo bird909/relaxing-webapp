@@ -8,41 +8,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayQuoteAuthor = document.getElementById('overlayQuoteAuthor');
     const closeBtn = document.getElementById('close-btn');
 
-    let currentTrackIndex = 0;
-    let tracks = [];
+    const handleItemClick = (item) => {
+        const musicSrc = item.getAttribute('data-music');
+        const imgSrc = item.querySelector('img').src;
+        const quote = item.getAttribute('data-quote');
+        const translation = item.getAttribute('data-translation');
+        const author = item.getAttribute('data-author');
 
-    fetch('quotes.json')
-        .then(response => response.json())
-        .then(data => {
-            const category = document.querySelector('body').dataset.category;
-            const categoryData = data.find(cat => cat.category === category);
-            tracks = categoryData ? categoryData.quotes : [];
-        });
-
-    const loadTrack = (index) => {
-        const track = tracks[index];
-        overlayImage.src = items[index].querySelector('img').src;
-        overlayAudio.src = track.music;
+        overlayImage.src = imgSrc;
+        overlayAudio.src = musicSrc;
+        overlayAudio.loop = true;
         overlayAudio.play();
-        overlayQuoteText.textContent = track.quote;
-        overlayQuoteTranslation.textContent = track.translation;
-        overlayQuoteAuthor.textContent = track.author;
-    };
+        overlayQuoteText.textContent = quote;
+        overlayQuoteTranslation.textContent = translation;
+        overlayQuoteAuthor.textContent = author;
 
-    const handleItemClick = (index) => {
-        currentTrackIndex = index;
-        loadTrack(currentTrackIndex);
         overlay.style.display = 'flex';
     };
 
-    items.forEach((item, index) => {
-        item.addEventListener('click', () => handleItemClick(index));
-        item.addEventListener('touchstart', () => handleItemClick(index));
-    });
-
-    overlayAudio.addEventListener('ended', () => {
-        currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
-        loadTrack(currentTrackIndex);
+    items.forEach((item) => {
+        item.addEventListener('click', () => handleItemClick(item));
+        item.addEventListener('touchstart', () => handleItemClick(item));
     });
 
     closeBtn.addEventListener('click', () => {
