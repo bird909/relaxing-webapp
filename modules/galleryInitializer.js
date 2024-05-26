@@ -1,4 +1,3 @@
-// modules/galleryInitializer.js
 import { handleItemClick } from './overlayHandler.js';
 
 export const initializeGallery = () => {
