@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
         const quoteIndex = item.getAttribute('data-quote-index');
-
-        // Find the current category
+        
+        // Find the current category based on the document title
         const category = document.title.split(' - ')[1].toLowerCase().replace(' ', '');
 
         // Find the correct quote based on the category and quoteIndex
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayQuoteTranslation.textContent = quote.translation;
         overlayQuoteAuthor.textContent = `- ${quote.author}`;
         
-        overlay.style.display = 'block';
+        overlay.style.display = 'flex';
         overlayAudio.play();
     };
 
