@@ -3,26 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relaxing Web App</title>
+    <title>Relaxing Tree</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Relaxing Web App</h1>
+    <h1>Welcome to Relaxing Tree</h1>
+    <p>Choose a category to begin your relaxing experience:</p>
     <div class="gallery">
-        <!-- Gallery items will be added here dynamically -->
-    </div>
-
-    <div class="overlay" id="overlay">
-        <div class="overlay-content">
-            <button id="close-btn">×</button>
-            <img id="overlayImage" class="overlayImage" src="" alt="Overlay Image">
-            <audio id="overlayAudio" controls autoplay loop></audio>
-            <p id="overlayQuoteText" class="overlayQuoteText"></p>
-            <p id="overlayQuoteTranslation" class="overlayQuoteTranslation"></p>
-            <p id="overlayQuoteAuthor" class="overlayQuoteAuthor"></p>
+        <div class="item" data-link="category1/index.html">
+            <img src="relaxing_photo_7.png" alt="Category 1">
+            <div class="overlay-title">Morning Piano</div>
+        </div>
+        <div class="item" data-link="category2/index.html">
+            <img src="relaxing_photo_8.png" alt="Category 2">
+            <div class="overlay-title">Rainy Day Window</div>
+        </div>
+        <div class="item" data-link="category3/index.html">
+            <img src="relaxing_photo_15.png" alt="Category 3">
+            <div class="overlay-title">Afternoon Cafe</div>
+        </div>
+        <div class="item" data-link="category4/index.html">
+            <img src="relaxing_photo_18.png" alt="Category 4">
+            <div class="overlay-title">Afternoon Tea Sunlight</div>
+        </div>
+        <div class="item" data-link="category5/index.html">
+            <img src="relaxing_photo_20.png" alt="Category 5">
+            <div class="overlay-title">Meditation</div>
+        </div>
+        <div class="item" data-link="category6/index.html">
+            <img src="relaxing_photo_21.png" alt="Category 6">
+            <div class="overlay-title">Memories of First Love</div>
         </div>
     </div>
 
-    <script type="module" src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const items = document.querySelectorAll('.item');
+
+            items.forEach((item) => {
+                item.addEventListener('click', () => {
+                    const link = item.getAttribute('data-link');
+                    window.location.href = link;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
