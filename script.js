@@ -1,21 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const items = document.querySelectorAll('.item');
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const overlayAudio = document.getElementById('overlayAudio');
-    const overlayQuoteText = document.getElementById('overlayQuoteText');
-    const closeBtn = document.getElementById('close-btn');
 
     const handleItemClick = (item) => {
         const musicSrc = item.getAttribute('data-music');
         const imgSrc = item.querySelector('img').src;
         const quote = item.getAttribute('data-quote');
+        const translation = item.getAttribute('data-translation');
+        const author = item.getAttribute('data-author');
 
         overlayImage.src = imgSrc;
         overlayAudio.src = musicSrc;
-        overlayAudio.loop = true;
+        overlayAudio.style.display = 'block';
         overlayAudio.play();
-        overlayQuoteText.textContent = quote;
+        overlayQuoteText.innerHTML = `<p>${quote}</p><p>${translation}</p><p><em>- ${author}</em></p>`;
 
         overlay.style.display = 'flex';
     };
