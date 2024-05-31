@@ -53,6 +53,19 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.currentTime = 0;
     });
 
+    document.exitFullscreen(); // 전체 화면 모드 종료
+});
+
+fullscreenBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        overlay.requestFullscreen(); // 전체 화면 모드 진입
+        overlay.classList.add('fullscreen');
+    } else {
+        document.exitFullscreen(); // 전체 화면 모드 종료
+        overlay.classList.remove('fullscreen');
+    }
+});
+
     // 홈 버튼 클릭 이벤트 리스너 추가
     homeBtn.addEventListener('click', () => {
         console.log('Home button clicked'); // 로그 추가
