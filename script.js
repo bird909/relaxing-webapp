@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const playCurrentTrack = () => {
         overlayAudio.src = playlist[currentTrackIndex];
-        overlayAudio.loop = false;
+        overlayAudio.loop = false; // 개별 트랙의 반복을 방지하기 위해 loop를 false로 설정
         overlayAudio.play();
     };
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (currentTrackIndex < playlist.length) {
             playCurrentTrack();
         } else {
-            currentTrackIndex = 0;
+            currentTrackIndex = 0; // 마지막 곡이 끝나면 첫 곡으로 돌아가기
             playCurrentTrack();
         }
     });
@@ -60,26 +60,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fullscreenBtn.addEventListener('click', () => {
         if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-            if (overlay.requestFullscreen) {
-                overlay.requestFullscreen();
-            } else if (overlay.webkitRequestFullscreen) { // Safari 지원
-                overlay.webkitRequestFullscreen();
-            }
+            const requestFullscreen = overlay.requestFullscreen || overlay.webkitRequestFullscreen || overlay.mozRequestFullScreen || overlay.msRequestFullscreen;
+            requestFullscreen.call(overlay);
             overlay.classList.add('fullscreen');
         } else {
-            if (document.exitFullscreen) {
-                document.exitFullscreen();
-            } else if (document.webkitExitFullscreen) { // Safari 지원
-                document.webkitExitFullscreen();
-            }
+            const exitFullscreen = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen || document.msExitFullscreen;
+            exitFullscreen.call(document);
             overlay.classList.remove('fullscreen');
         }
     });
 
+    // 홈 버튼 클릭 이벤트 리스너 추가
     homeBtn.addEventListener('click', () => {
         window.location.href = 'https://bird909.github.io/relaxing-webapp/';
     });
 
+    // 홈 버튼 터치 이벤트 리스너 추가 (iOS 장치용)
     homeBtn.addEventListener('touchstart', () => {
         window.location.href = 'https://bird909.github.io/relaxing-webapp/';
     });
