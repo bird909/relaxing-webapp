@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayAudio = document.getElementById('overlayAudio');
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const closeBtn = document.getElementById('close-btn');
+    const homeBtn = document.getElementById('home-btn'); // 홈 버튼 요소를 선택합니다.
 
     let currentTrackIndex = 0;
     let playlist = [];
@@ -52,9 +53,16 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.currentTime = 0;
     });
 
-     // 홈 버튼 클릭 이벤트 리스너 추가
+    // 홈 버튼 클릭 이벤트 리스너 추가
     homeBtn.addEventListener('click', () => {
-        window.location.href = '../index.html'; // 홈 페이지 URL로 변경
+        console.log('Home button clicked'); // 로그 추가
+        window.location.href = 'https://bird909.github.io/relaxing-webapp/'; // 홈 페이지 URL로 변경
     });
-    
+
+    // 홈 버튼 터치 이벤트 리스너 추가 (iOS 장치용)
+    homeBtn.addEventListener('touchstart', () => {
+        console.log('Home button touched'); // 로그 추가
+        window.location.href = 'https://bird909.github.io/relaxing-webapp/'; // 홈 페이지 URL로 변경
+    });
 });
+
