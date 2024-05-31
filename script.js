@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlayAudio = document.getElementById('overlayAudio');
     const overlayQuoteText = document.getElementById('overlayQuoteText');
     const closeBtn = document.getElementById('close-btn');
+    const fullscreenBtn = document.getElementById('fullscreen-btn'); // 전체 화면 버튼 요소를 선택합니다.
     const homeBtn = document.getElementById('home-btn'); // 홈 버튼 요소를 선택합니다.
 
     let currentTrackIndex = 0;
@@ -51,20 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
         overlay.style.display = 'none';
         overlayAudio.pause();
         overlayAudio.currentTime = 0;
+        if (document.fullscreenElement) {
+            document.exitFullscreen(); // 전체 화면 모드 종료
+            overlay.classList.remove('fullscreen');
+        }
     });
 
-    document.exitFullscreen(); // 전체 화면 모드 종료
-});
-
-fullscreenBtn.addEventListener('click', () => {
-    if (!document.fullscreenElement) {
-        overlay.requestFullscreen(); // 전체 화면 모드 진입
-        overlay.classList.add('fullscreen');
-    } else {
-        document.exitFullscreen(); // 전체 화면 모드 종료
-        overlay.classList.remove('fullscreen');
-    }
-});
+    fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            overlay.requestFullscreen(); // 전체 화면 모드 진입
+            overlay.classList.add('fullscreen');
+        } else {
+            document.exitFullscreen(); // 전체 화면 모드 종료
+            overlay.classList.remove('fullscreen');
+        }
+    });
 
     // 홈 버튼 클릭 이벤트 리스너 추가
     homeBtn.addEventListener('click', () => {
@@ -78,4 +80,3 @@ fullscreenBtn.addEventListener('click', () => {
         window.location.href = 'https://bird909.github.io/relaxing-webapp/';
     });
 });
-
