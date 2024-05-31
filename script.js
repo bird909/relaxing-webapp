@@ -60,10 +60,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fullscreenBtn.addEventListener('click', () => {
         if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-            overlay.requestFullscreen ? overlay.requestFullscreen() : overlay.webkitRequestFullscreen();
+            if (overlay.requestFullscreen) {
+                overlay.requestFullscreen();
+            } else if (overlay.webkitRequestFullscreen) { // Safari 지원
+                overlay.webkitRequestFullscreen();
+            }
             overlay.classList.add('fullscreen');
         } else {
-            document.exitFullscreen ? document.exitFullscreen() : document.webkitExitFullscreen();
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) { // Safari 지원
+                document.webkitExitFullscreen();
+            }
             overlay.classList.remove('fullscreen');
         }
     });
