@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 홈 버튼 터치 이벤트 리스너 추가 (iOS 장치용)
     homeBtn.addEventListener('touchstart', () => {
         console.log('Home button touched'); // 로그 추가
-        window.location.href = 'https://bird909.github.io/relaxing-webapp/'; // 홈 페이지 URL로 변경
+        window.location.href = 'https://bird909.github.io/relaxing-webapp/';
     });
 });
 
