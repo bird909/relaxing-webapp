@@ -104,6 +104,25 @@ h1 {
     cursor: pointer;
 }
 
+/* Home Button Style */
+#home-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #5f9ea0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#home-btn:hover {
+    background-color: #4682b4;
+}
+
 /* Audio Player Custom Styles */
 audio {
     width: 100%;

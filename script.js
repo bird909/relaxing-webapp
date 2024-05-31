@@ -51,4 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         overlayAudio.pause();
         overlayAudio.currentTime = 0;
     });
+
+     // 홈 버튼 클릭 이벤트 리스너 추가
+    homeBtn.addEventListener('click', () => {
+        window.location.href = '../index.html'; // 홈 페이지 URL로 변경
+    });
+    
 });
